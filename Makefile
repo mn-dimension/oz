@@ -49,6 +49,10 @@ build:
 	clojure -M:shadow-cljs release app lib && \
 	clojure -A:pack mach.pack.alpha.skinny --no-libs --project-path target/oz.jar
 
+.PHONY: install
+install: build
+	mvn -e deploy:deploy-file -Dfile=target/oz.jar -DrepositoryId=local-repo -Durl=file:${HOME}/.m2/repository/ -DpomFile=pom.xml
+
 .PHONY: release
 release: check-clean-tree build
 	# Add the js compilation output and commit
