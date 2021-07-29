@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>metasoarous</groupId>
+  <groupId>io.github.mn-dimension</groupId>
   <artifactId>oz</artifactId>
   <packaging>jar</packaging>
   <version>1.6.0-alpha35-SNAPSHOT</version>
   <name>oz</name>
   <description>Great and powerful data visualizations and scientific documents in Clojure using Vega and Vega-lite</description>
-  <url>http://github.com/metasoarous/oz</url>
+  <url>http://github.com/mn-dimension/oz</url>
   <licenses>
     <license>
       <name>Eclipse Public License</name>
@@ -14,9 +14,9 @@
     </license>
   </licenses>
   <scm>
-    <url>https://github.com/metasoarous/oz</url>
-    <connection>scm:git:git://github.com/metasoarous/oz.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com/metasoarous/oz.git</developerConnection>
+    <url>https://github.com/mn-dimension/oz</url>
+    <connection>scm:git:git://github.com/mn-dimension/oz.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/mn-dimension/oz.git</developerConnection>
     <tag>1ebca87301a9b9720d11bf0e245dbbc71d840188</tag>
   </scm>
   <build>
@@ -61,10 +61,6 @@
       <id>clojars</id>
       <url>https://repo.clojars.org/</url>
     </repository>
-    <repository>
-      <id>datomic-cloud</id>
-      <url>s3://datomic-releases-1fc2183a/maven/releases</url>
-    </repository>
   </repositories>
   <dependencyManagement>
     <dependencies/>
@@ -74,6 +70,18 @@
       <groupId>org.clojure</groupId>
       <artifactId>clojure</artifactId>
       <version>1.10.1</version>
+    </dependency>
+    <dependency>
+      <groupId>clojupyter</groupId>
+      <artifactId>clojupyter</artifactId>
+      <version>0.3.2</version>
+      <exclusions>
+        <exclusion>
+          <groupId>hiccup</groupId>
+          <artifactId>hiccup</artifactId>
+        </exclusion>
+      </exclusions>
+      <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.clojure</groupId>
@@ -225,5 +233,5 @@
       <artifactId>core.async</artifactId>
       <version>0.4.490</version>
     </dependency>
-  <dependency><groupId>clojupyter</groupId><artifactId>clojupyter</artifactId><version>0.3.2</version><scope>provided</scope></dependency></dependencies>
+  </dependencies>
 </project>
